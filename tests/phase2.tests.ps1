@@ -41,7 +41,7 @@ Assert-Condition ($html.Contains('id="temperature-down"') -and $html.Contains('i
 Assert-Condition ([regex]::Matches($html, 'data-fan=').Count -eq 4) "Four FAN controls exist"
 Assert-Condition ($html.Contains('id="add-runtime-button"')) "Runtime simulation control exists"
 Assert-Condition ([regex]::Matches($html, 'data-scenario=').Count -eq 3) "Three device scenarios exist"
-Assert-Condition ($css.Contains('--red-600: #e23a4e')) "Red warning token exists"
+Assert-Condition ($css.Contains('--red-600: #c75d6e')) "Pastel Red warning token exists"
 Assert-Condition ($css.Contains('.device-alert.is-danger')) "Abnormal status Red UI exists"
 Assert-Condition ($css.Contains('.aircon-card.is-danger')) "Aircon summary Red UI exists"
 Assert-Condition ($script.Contains('const DEFAULT_AIRCON_STATE')) "Virtual Carrier IoT state exists"
