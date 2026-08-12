@@ -7,7 +7,7 @@
       name="description"
       content="친환경 냉방 미션으로 지구도 지키고 GREEN POINT도 모으는 Carrier GreenON"
     />
-    <meta name="theme-color" content="#1677ff" />
+    <meta name="theme-color" content="#168bff" />
     <title>Carrier GreenON</title>
     <link rel="stylesheet" href="./styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.111.0/dist/umd/supabase.min.js"></script>
@@ -34,12 +34,28 @@
           </span>
         </a>
 
-        <button class="icon-button notification-button" type="button" aria-label="알림 확인">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4" />
-          </svg>
-          <span class="notification-dot" aria-hidden="true"></span>
-        </button>
+        <nav class="desktop-nav" aria-label="데스크톱 주요 메뉴">
+          <button type="button" data-go-page="home">홈</button>
+          <button type="button" data-go-page="mission">미션</button>
+          <button type="button" data-go-page="shop">리워드</button>
+          <button type="button" data-go-page="my">에너지 리포트</button>
+        </nav>
+
+        <div class="top-actions">
+          <button class="top-point-pill" type="button" data-go-page="wallet" aria-label="현재 포인트와 지갑 열기">
+            <span class="point-coin" aria-hidden="true">P</span>
+            <strong><span id="shop-balance">0</span>P</strong>
+          </button>
+          <button class="icon-button notification-button" type="button" aria-label="알림 확인">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4" />
+            </svg>
+            <span class="notification-dot" aria-hidden="true"></span>
+          </button>
+          <button class="icon-button profile-button" type="button" data-go-page="my" aria-label="내 프로필 열기">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4" /><path d="M4 21a8 8 0 0 1 16 0" /></svg>
+          </button>
+        </div>
       </header>
 
       <main id="main-content" tabindex="-1">
@@ -55,23 +71,21 @@
             </div>
           </div>
 
-          <section class="hero-card" aria-label="오늘의 친환경 냉방 요약">
+          <section class="hero-card" aria-label="Carrier GreenON 친환경 미션 안내">
             <div class="hero-copy">
-              <span class="pill pill--glass">GREEN DAY 01</span>
-              <h2>쾌적함은 그대로,<br />에너지는 가볍게</h2>
-              <p>작은 냉방 습관으로 오늘의 초록을 켜보세요.</p>
+              <span class="hero-kicker">⚡ 지구를 지키는 오늘의 도전</span>
+              <h2>전기를 아끼고<br />지구를 지켜요 <span aria-hidden="true">🌍</span></h2>
+              <p>매일 작은 절약 미션을 완료하고<br />리워드 포인트를 받아보세요.</p>
             </div>
-            <div class="hero-illustration" aria-hidden="true">
-              <span class="sun"></span>
-              <span class="cloud cloud--one"></span>
-              <span class="cloud cloud--two"></span>
-              <span class="air-wave air-wave--one"></span>
-              <span class="air-wave air-wave--two"></span>
-              <span class="leaf">◆</span>
-              <span class="ac-unit">
-                <i></i>
-                <i></i>
-                <i></i>
+            <div class="hero-mascot" aria-hidden="true">
+              <span class="mascot-glow"></span>
+              <img src="./carrier-polar-bear.png" alt="" />
+            </div>
+            <div class="hero-actions">
+              <button class="primary-button hero-cta" type="button" data-go-page="mission">오늘의 미션 시작하기</button>
+              <span class="hero-reward-note">
+                <span class="point-coin point-coin--small" aria-hidden="true">P</span>
+                <span>오늘 받을 수 있는 포인트 <strong>+150P</strong></span>
               </span>
             </div>
           </section>
@@ -231,23 +245,24 @@
             <div class="mission-topline">
               <div>
                 <p class="eyebrow">TODAY'S MISSION</p>
-                <h2 id="mission-preview-title">오늘의 GREEN MISSION</h2>
+                <h2 id="mission-preview-title">오늘의 절전 미션 <span aria-hidden="true">⚡</span></h2>
               </div>
-              <span class="point-chip">+150 P</span>
+              <span class="point-chip"><span class="point-coin point-coin--small" aria-hidden="true">P</span><strong>+150 P</strong></span>
             </div>
             <div class="mission-body">
-              <div class="mission-symbol" aria-hidden="true">26°</div>
+              <div class="mission-symbol" aria-hidden="true">🌡️</div>
               <div class="mission-copy">
-                <strong>적정 온도 26℃ 지키기</strong>
-                <p>쾌적한 실내 온도를 유지하고 에너지 낭비를 줄여요.</p>
+                <strong>에어컨 온도 26℃ 유지하기</strong>
+                <p>에어컨 적정온도를 유지하고 전력 사용량을 줄여보세요.</p>
                 <div class="mission-tags" aria-label="미션 조건">
-                  <span>⏱ 60분</span>
+                  <span>쉬움</span>
+                  <span>⏱ 약 60분</span>
                   <span>❄ 냉방 모드</span>
                 </div>
               </div>
             </div>
             <button class="primary-button" type="button" data-go-page="mission">
-              미션 화면 둘러보기
+              미션 도전하기
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
             </button>
             <p class="preview-note">로그인 후 미션 화면에서 바로 참여할 수 있어요.</p>
@@ -256,16 +271,16 @@
 
           <section class="impact-card" aria-label="이번 주 친환경 활동 요약">
             <div class="impact-title">
-              <span aria-hidden="true">🌏</span>
+              <span aria-hidden="true">🏆</span>
               <div>
-                <p>이번 주 나의 작은 변화</p>
-                <strong>지구가 한결 시원해졌어요!</strong>
+                <p>MY GREEN IMPACT</p>
+                <strong>나의 절약 성과</strong>
               </div>
             </div>
             <div class="impact-stats">
-              <div><strong id="home-completed-missions">0</strong><span>완료 미션</span></div>
-              <div><strong id="home-earned-points">0 P</strong><span>모은 포인트</span></div>
-              <div><strong>1.2 kg</strong><span>CO₂ 절감</span></div>
+              <div><span class="impact-stat-icon" aria-hidden="true">⚡</span><strong id="home-completed-missions">0</strong><span>완료한 절전 미션</span></div>
+              <div><span class="impact-stat-icon point-stat-icon" aria-hidden="true">P</span><strong id="home-earned-points">0 P</strong><span>받은 리워드</span></div>
+              <div><span class="impact-stat-icon" aria-hidden="true">🌱</span><strong>1.2 kg</strong><span>줄인 CO₂</span></div>
             </div>
             <span class="sample-caption">CO₂ 절감량은 추정 예시 수치예요</span>
           </section>
@@ -421,10 +436,7 @@
               <h1 id="shop-title">초록 리워드 숍</h1>
               <p>모은 포인트를 기분 좋은 친환경 리워드로 바꿔요.</p>
             </div>
-            <button class="shop-wallet-chip" type="button" data-go-page="wallet" aria-label="GREEN WALLET 열기">
-              <span>MY POINT</span>
-              <strong><span id="shop-balance">0</span> P</strong>
-            </button>
+            <span class="shop-heading-emoji" aria-hidden="true">🎁</span>
           </header>
 
           <section class="shop-hero" aria-label="리워드 숍 안내">

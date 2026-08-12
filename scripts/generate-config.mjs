@@ -38,6 +38,7 @@ if (missingVariables.length > 0) {
 const publicFiles = [
   "index.html",
   "styles.css",
+  "carrier-polar-bear.png",
   "app.js",
   "supabase-service.js",
   "weather-service.js",
