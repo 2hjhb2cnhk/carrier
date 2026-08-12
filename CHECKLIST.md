@@ -128,7 +128,7 @@
 - [x] 미션 테스트
 - [x] 포인트 적립 테스트
 - [x] Reward 구매 테스트
-- [ ] Supabase Auth Site URL과 Redirect URL에 배포 URL 등록
+- [x] Supabase Auth Site URL과 Redirect URL에 배포 URL 등록
 
 
 ## FINAL CHECK
@@ -139,4 +139,4 @@
 - [x] Warning/Error Red 확인
 - [x] Supabase 보안 확인
 - [x] 전체 기능 회귀 테스트
-- [ ] 최종 배포 확인
+- [x] 최종 배포 확인
