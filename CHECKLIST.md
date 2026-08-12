@@ -117,25 +117,26 @@
 
 ## PHASE 11 — Render 배포
 
-- [ ] Render 서비스 생성
-- [ ] Git 저장소 연결
-- [ ] 환경변수 등록
-- [ ] Build 성공
-- [ ] 배포 성공
-- [ ] 배포 URL 접속
-- [ ] 회원가입 테스트
-- [ ] 로그인 테스트
-- [ ] 미션 테스트
-- [ ] 포인트 적립 테스트
-- [ ] Reward 구매 테스트
+- [x] Render 서비스 생성
+- [x] Git 저장소 연결
+- [x] 환경변수 등록
+- [x] Build 성공
+- [x] 배포 성공
+- [x] 배포 URL 접속
+- [x] 회원가입 테스트
+- [x] 로그인 테스트
+- [x] 미션 테스트
+- [x] 포인트 적립 테스트
+- [x] Reward 구매 테스트
+- [ ] Supabase Auth Site URL과 Redirect URL에 배포 URL 등록
 
 
 ## FINAL CHECK
 
-- [ ] PROJECT.md 요구사항 누락 검사
-- [ ] 모바일 화면 검사
-- [ ] 정상 상태 Blue 확인
-- [ ] Warning/Error Red 확인
-- [ ] Supabase 보안 확인
-- [ ] 전체 기능 회귀 테스트
+- [x] PROJECT.md 요구사항 누락 검사
+- [x] 모바일 화면 검사
+- [x] 정상 상태 Blue 확인
+- [x] Warning/Error Red 확인
+- [x] Supabase 보안 확인
+- [x] 전체 기능 회귀 테스트
 - [ ] 최종 배포 확인

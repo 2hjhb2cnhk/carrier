@@ -2,6 +2,8 @@
 
 Carrier GreenON은 캐리어 에어컨 사용자를 위한 ESG 친환경 냉방 미션 + GREEN POINT 리워드 웹앱입니다. 실제 에어컨 API 대신 가상 IoT 상태를 사용하며, 사용자 데이터는 Supabase Auth와 PostgreSQL RLS로 분리합니다.
 
+배포 URL: https://carrier-greenon-kk1k.onrender.com
+
 ## 주요 사용자 흐름
 
 회원가입/로그인 → 날씨와 가상 에어컨 확인 → GREEN MISSION 참여 → 30분 단위 시뮬레이션 → 미션 성공 및 포인트 적립 → GREEN WALLET 확인 → REWARD SHOP 구매 → GREEN REPORT 확인
