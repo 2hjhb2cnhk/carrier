@@ -41,6 +41,7 @@ const publicFiles = [
   "carrier-polar-bear.png",
   "app.js",
   "remote-ui.js",
+  "snow-motion.js",
   "supabase-service.js",
   "weather-service.js",
 ];
