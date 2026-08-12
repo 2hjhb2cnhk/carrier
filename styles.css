@@ -1,38 +1,45 @@
 @import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap");
 
 :root {
+  --primary-green: #74c69d;
+  --fresh-green: #95d5b2;
+  --light-green: #d8f3dc;
+  --pastel-yellow: #ffe58f;
+  --soft-yellow: #fff3bf;
+  --point-yellow: #ffd43b;
+  --cream: #fffdf5;
   --primary-blue: #168bff;
   --deep-blue: #0867d1;
   --light-blue: #eaf6ff;
-  --eco-green: #4ecb71;
-  --reward-yellow: #ffc83d;
-  --reward-yellow-soft: #fff7d8;
-  --blue-900: #0753a8;
-  --blue-700: #0867d1;
+  --eco-green: #74c69d;
+  --reward-yellow: #ffd43b;
+  --reward-yellow-soft: #fff3bf;
+  --blue-900: #32634c;
+  --blue-700: #4c9a70;
   /* 이전 파스텔 테마 검증과 호환되는 보조 Blue 토큰입니다. */
   --blue-600: #709ed1;
-  --blue-500: #54aeff;
-  --blue-300: #a8d6ff;
-  --blue-100: #dceeff;
-  --blue-50: #eaf6ff;
-  --green-600: #299e4d;
-  --green-100: #e8f9ed;
+  --blue-500: #95d5b2;
+  --blue-300: #b7e4c7;
+  --blue-100: #d8f3dc;
+  --blue-50: #f0faef;
+  --green-600: #4c9a70;
+  --green-100: #d8f3dc;
   --red-700: #a94658;
   --red-600: #c75d6e;
   --red-100: #f8dfe4;
   --red-50: #fff4f6;
-  --ink-900: #172b3a;
-  --ink-700: #4f6272;
-  --ink-500: #718096;
-  --line: #e8f1f8;
+  --ink-900: #344e41;
+  --ink-700: #587063;
+  --ink-500: #74877a;
+  --line: #d6ead8;
   --surface: #ffffff;
-  --page: #f7fbff;
+  --page: #f7fbef;
   --lavender-100: #eee9f8;
   --mint-100: #e8f4ef;
   --peach-100: #fbece6;
   --butter-100: #fff4dc;
-  --shadow-sm: 0 10px 28px rgba(8, 103, 209, 0.08);
-  --shadow-lg: 0 24px 60px rgba(8, 103, 209, 0.14);
+  --shadow-sm: 0 10px 28px rgba(69, 123, 84, 0.09);
+  --shadow-lg: 0 24px 60px rgba(65, 118, 81, 0.15);
   --radius-sm: 14px;
   --radius-md: 20px;
   --radius-lg: 28px;
@@ -52,8 +59,8 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background:
-    radial-gradient(circle at 8% 3%, rgba(220, 238, 255, 0.9), transparent 28rem),
-    radial-gradient(circle at 92% 18%, rgba(232, 249, 237, 0.72), transparent 25rem),
+    radial-gradient(circle at 8% 3%, rgba(216, 243, 220, 0.95), transparent 28rem),
+    radial-gradient(circle at 92% 18%, rgba(255, 229, 143, 0.52), transparent 25rem),
     var(--page);
   color: var(--ink-900);
   font-family: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
@@ -93,7 +100,7 @@ svg {
 .app-shell {
   width: 100%;
   min-height: 100vh;
-  background: rgba(247, 251, 255, 0.72);
+  background: rgba(247, 251, 239, 0.76);
 }
 
 .top-bar {
@@ -109,7 +116,7 @@ svg {
   margin: 0 auto;
   padding: 0 20px;
   background: rgba(255, 255, 255, 0.92);
-  border-bottom: 1px solid rgba(232, 241, 248, 0.95);
+  border-bottom: 1px solid rgba(214, 234, 216, 0.95);
   backdrop-filter: blur(18px);
 }
 
@@ -205,8 +212,8 @@ svg {
 }
 
 .desktop-nav button:hover {
-  background: var(--light-blue);
-  color: var(--deep-blue);
+  background: var(--light-green);
+  color: var(--green-600);
 }
 
 .top-actions {
@@ -221,10 +228,10 @@ svg {
   align-items: center;
   gap: 7px;
   padding: 0 11px 0 7px;
-  border: 1px solid #ffe6a0;
+  border: 1px solid var(--pastel-yellow);
   border-radius: 999px;
   background: var(--reward-yellow-soft);
-  color: #a76600;
+  color: #7a5c00;
   cursor: pointer;
   transition: transform 200ms ease, box-shadow 200ms ease;
 }
@@ -242,7 +249,7 @@ svg {
   place-items: center;
   border: 2px solid #ffb918;
   border-radius: 50%;
-  background: var(--reward-yellow);
+  background: var(--point-yellow);
   color: #805000;
   font-size: 12px;
   font-weight: 900;
@@ -257,7 +264,7 @@ svg {
 }
 
 .profile-button {
-  color: var(--deep-blue);
+  color: var(--green-600);
 }
 
 .notification-button {
@@ -272,7 +279,7 @@ svg {
   height: 7px;
   border: 2px solid white;
   border-radius: 50%;
-  background: var(--primary-blue);
+  background: var(--primary-green);
 }
 
 main {
@@ -334,7 +341,7 @@ main {
 
 .eyebrow {
   margin: 0 0 6px;
-  color: var(--primary-blue);
+  color: var(--green-600);
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.09em;
@@ -373,11 +380,11 @@ main {
   min-height: 0;
   padding: 28px 22px 24px;
   overflow: hidden;
-  border: 1px solid #dceeff;
+  border: 1px solid #cce8d1;
   border-radius: 30px;
-  background: linear-gradient(135deg, #ffffff 4%, var(--light-blue) 66%, #e5f7ec 130%);
+  background: linear-gradient(135deg, var(--cream) 4%, #eff9e9 58%, var(--soft-yellow) 135%);
   color: var(--ink-900);
-  box-shadow: 0 20px 50px rgba(8, 103, 209, 0.11);
+  box-shadow: 0 20px 50px rgba(75, 131, 89, 0.12);
   isolation: isolate;
 }
 
@@ -404,8 +411,8 @@ main {
   display: inline-flex;
   padding: 8px 11px;
   border-radius: 999px;
-  background: rgba(22, 139, 255, 0.1);
-  color: var(--deep-blue);
+  background: var(--soft-yellow);
+  color: #7a5c00;
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.02em;
@@ -457,7 +464,7 @@ main {
   height: 170px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.88);
-  box-shadow: 0 16px 40px rgba(22, 139, 255, 0.12);
+  box-shadow: 0 16px 40px rgba(95, 149, 101, 0.14);
 }
 
 .hero-mascot img {
@@ -500,7 +507,7 @@ main {
 
 .hero-reward-note strong {
   margin-left: 4px;
-  color: #a76600;
+  color: #7a5c00;
   font-size: 12px;
 }
 
@@ -645,8 +652,10 @@ main {
 }
 
 .info-card {
-  padding: 18px;
-  border-radius: var(--radius-md);
+  padding: 20px;
+  border-color: #d3ead6;
+  border-radius: 24px;
+  background: var(--cream);
 }
 
 .card-heading {
@@ -679,7 +688,7 @@ main {
   border: 1px solid var(--line);
   border-radius: 9px;
   background: var(--surface);
-  color: var(--primary-blue);
+  color: var(--green-600);
   cursor: pointer;
 }
 
@@ -750,13 +759,13 @@ main {
 }
 
 .card-icon--sky {
-  background: var(--light-blue);
-  color: var(--primary-blue);
+  background: var(--soft-yellow);
+  color: #967000;
 }
 
 .card-icon--blue {
-  background: var(--blue-100);
-  color: var(--primary-blue);
+  background: var(--light-green);
+  color: var(--green-600);
 }
 
 .temperature-row,
@@ -810,7 +819,7 @@ main {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--primary-blue);
+  background: var(--primary-green);
   box-shadow: 0 0 0 3px var(--blue-100);
 }
 
@@ -858,7 +867,7 @@ main {
   padding: 0 12px;
   border: 0;
   border-radius: 12px;
-  background: var(--primary-blue);
+  background: var(--primary-green);
   color: white;
   font-size: 10px;
   font-weight: 800;
@@ -1091,7 +1100,7 @@ main {
   margin-top: 20px;
   padding: 15px;
   border-radius: 16px;
-  background: #f8fbff;
+  background: #f2f8ec;
 }
 
 .scenario-panel strong {
@@ -1127,6 +1136,348 @@ main {
   color: var(--blue-700);
 }
 
+/* 기존 가상 IoT 조작 요소를 그대로 사용하는 Carrier GreenON 전용 ECO AIR 리모컨입니다. */
+.aircon-simulator {
+  padding: 26px;
+  border-color: #c9e7ce;
+  border-radius: 28px;
+  background: linear-gradient(145deg, var(--cream), #f4faed);
+}
+
+.simulator-subtitle {
+  margin: 7px 0 0;
+  color: var(--ink-500);
+  font-size: 10px;
+}
+
+.eco-remote-layout {
+  display: grid;
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.remote-partner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid #c9e7ce;
+  border-radius: 22px;
+  background: var(--soft-yellow);
+}
+
+.remote-partner-picture {
+  display: grid;
+  width: 82px;
+  height: 82px;
+  flex: 0 0 auto;
+  overflow: hidden;
+  place-items: center;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.remote-partner-picture img {
+  width: 78px;
+  height: 78px;
+  object-fit: cover;
+  transform: scale(1.13);
+  animation: mascot-float-small 3s ease-in-out infinite;
+}
+
+@keyframes mascot-float-small {
+  0%, 100% { transform: translateY(1px) scale(1.13); }
+  50% { transform: translateY(-4px) scale(1.13); }
+}
+
+.remote-speech {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 8px 20px rgba(103, 128, 77, 0.08);
+}
+
+.remote-speech::before {
+  position: absolute;
+  top: 24px;
+  left: -7px;
+  width: 14px;
+  height: 14px;
+  background: white;
+  content: "";
+  transform: rotate(45deg);
+}
+
+.remote-speech strong {
+  font-size: 12px;
+}
+
+.remote-speech span {
+  color: var(--ink-500);
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.eco-remote {
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid #bfe2c5;
+  border-radius: 32px;
+  background: var(--cream);
+  box-shadow: 0 20px 44px rgba(74, 122, 73, 0.13);
+  transition: filter 200ms ease, transform 200ms ease;
+}
+
+.remote-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.remote-header > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.remote-brand {
+  color: var(--green-600);
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+}
+
+.remote-header small {
+  color: var(--ink-500);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.eco-remote .power-button {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  min-height: 58px;
+  place-items: center;
+  padding: 0;
+  border: 5px solid rgba(255, 255, 255, 0.78);
+  border-radius: 50%;
+  background: var(--primary-green);
+  box-shadow: 0 8px 18px rgba(80, 155, 104, 0.22);
+  transition: transform 160ms ease, background 200ms ease;
+}
+
+.eco-remote .power-button svg {
+  width: 23px;
+}
+
+.eco-remote .power-button span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.eco-remote .power-button:active,
+.remote-temperature-controls button:active,
+.remote-functions button:active {
+  transform: scale(0.96);
+}
+
+.eco-remote .power-button[aria-pressed="false"] {
+  background: #d9dfd8;
+  color: #7d897f;
+  box-shadow: none;
+}
+
+.remote-display {
+  display: flex;
+  min-height: 250px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 18px;
+  padding: 24px 16px;
+  border: 1px solid #cae8cf;
+  border-radius: 26px;
+  background: linear-gradient(155deg, #f5fbef, var(--light-green));
+  text-align: center;
+  transition: background 220ms ease, box-shadow 220ms ease;
+}
+
+.remote-display.is-eco-temperature {
+  background: linear-gradient(155deg, #f6fff2, #ccefd3);
+  box-shadow: inset 0 0 0 2px rgba(116, 198, 157, 0.18), 0 12px 28px rgba(86, 152, 102, 0.12);
+}
+
+.remote-display-kicker {
+  color: var(--green-600);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.remote-display output {
+  display: block;
+  margin: 9px 0 4px;
+  color: var(--ink-900);
+  font-size: clamp(68px, 22vw, 94px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.09em;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.remote-display.is-eco-temperature output {
+  color: var(--green-600);
+}
+
+.remote-display > strong {
+  color: var(--ink-700);
+  font-size: 12px;
+}
+
+.remote-eco-message {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 9px 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--green-600);
+  text-align: left;
+}
+
+.remote-eco-message[hidden] {
+  display: none;
+}
+
+.remote-eco-message > span:first-child {
+  font-size: 21px;
+}
+
+.remote-eco-message strong,
+.remote-eco-message small {
+  display: block;
+}
+
+.remote-eco-message strong {
+  font-size: 10px;
+}
+
+.remote-eco-message small {
+  margin-top: 2px;
+  color: var(--ink-500);
+  font-size: 8px;
+}
+
+.remote-temperature-controls {
+  display: grid;
+  grid-template-columns: 58px 1fr auto 1fr 58px;
+  gap: 8px;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.remote-temperature-controls button {
+  width: 58px;
+  height: 58px;
+  border: 1px solid #bfe2c5;
+  border-radius: 19px;
+  background: white;
+  color: var(--green-600);
+  font-size: 28px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 7px 16px rgba(78, 128, 82, 0.1);
+  transition: transform 160ms ease, background 200ms ease;
+}
+
+.remote-temperature-controls button:hover {
+  background: var(--light-green);
+  transform: translateY(-2px);
+}
+
+.remote-temperature-controls > span {
+  color: var(--ink-500);
+  font-size: 8px;
+  text-align: center;
+}
+
+.remote-temperature-controls > strong {
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.remote-functions {
+  display: grid;
+  gap: 13px;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px dashed #c9e7ce;
+}
+
+.remote-mode-control {
+  display: grid;
+  gap: 7px;
+}
+
+.remote-mode-control select {
+  width: 100%;
+  min-width: 0;
+  height: 50px;
+  border-color: #c9e7ce;
+  border-radius: 15px;
+  background: white;
+  color: var(--ink-900);
+  font-size: 11px;
+}
+
+.remote-fan-control .segmented-control {
+  background: var(--light-green);
+}
+
+.remote-fan-control .segment--active {
+  color: var(--green-600);
+  box-shadow: 0 5px 14px rgba(75, 126, 82, 0.1);
+}
+
+.eco-remote .time-button {
+  min-height: 50px;
+  border-color: var(--pastel-yellow);
+  border-radius: 15px;
+  background: var(--soft-yellow);
+  color: #7a5c00;
+}
+
+.eco-remote.is-powered-off .remote-display {
+  filter: grayscale(0.75);
+  opacity: 0.76;
+}
+
+.remote-diagnostics {
+  min-width: 0;
+}
+
+.remote-diagnostics .device-alert {
+  margin-top: 0;
+  background: var(--light-green);
+}
+
+.remote-diagnostics .scenario-panel {
+  background: rgba(255, 255, 255, 0.66);
+}
+
 .scenario-button[data-scenario="filter"].scenario-button--active,
 .scenario-button[data-scenario="sensor"].scenario-button--active {
   border-color: #ffc0c8;
@@ -1143,13 +1494,14 @@ main {
   margin-top: 30px;
   padding: 24px;
   border-radius: 24px;
-  background: var(--surface);
+  border-color: #c9e7ce;
+  background: linear-gradient(135deg, #ffffff, #eef9e9 72%, var(--soft-yellow));
   transition: transform 200ms ease, box-shadow 200ms ease;
 }
 
 .mission-preview:hover,
 .reward-card:hover {
-  box-shadow: 0 18px 42px rgba(8, 103, 209, 0.14);
+  box-shadow: 0 18px 42px rgba(68, 127, 83, 0.15);
   transform: translateY(-3px) scale(1.01);
 }
 
@@ -1166,7 +1518,7 @@ main {
   padding: 8px 11px;
   border-radius: 999px;
   background: var(--reward-yellow-soft);
-  color: #a76600;
+  color: #7a5c00;
   font-size: 12px;
   font-weight: 800;
 }
@@ -1184,14 +1536,22 @@ main {
   height: 78px;
   place-items: center;
   border-radius: 22px;
-  background: linear-gradient(145deg, var(--light-blue), #f0fbff);
-  color: var(--deep-blue);
+  background: linear-gradient(145deg, var(--light-green), var(--soft-yellow));
+  color: var(--green-600);
   font-size: 30px;
   font-weight: 800;
 }
 
 .mission-copy strong {
   font-size: 17px;
+}
+
+.mission-goal-label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--green-600);
+  font-size: 9px;
+  font-weight: 800;
 }
 
 .mission-copy p {
@@ -1210,7 +1570,7 @@ main {
 .mission-tags span {
   padding: 5px 8px;
   border-radius: 8px;
-  background: var(--light-blue);
+  background: rgba(255, 255, 255, 0.78);
   color: var(--ink-700);
   font-size: 10px;
   font-weight: 600;
@@ -1232,9 +1592,9 @@ main {
   width: 100%;
   gap: 7px;
   border: 0;
-  background: linear-gradient(135deg, var(--primary-blue), var(--deep-blue));
+  background: linear-gradient(135deg, var(--primary-green), #52ad79);
   color: white;
-  box-shadow: 0 12px 24px rgba(22, 139, 255, 0.22);
+  box-shadow: 0 12px 24px rgba(82, 173, 121, 0.22);
 }
 
 .primary-button svg {
@@ -1249,7 +1609,7 @@ main {
 .primary-button:hover,
 .secondary-button:hover,
 .icon-button:hover {
-  box-shadow: 0 15px 30px rgba(22, 139, 255, 0.2);
+  box-shadow: 0 15px 30px rgba(82, 173, 121, 0.2);
   transform: translateY(-2px);
 }
 
@@ -1296,7 +1656,7 @@ main {
 
 .impact-title p {
   margin: 0 0 2px;
-  color: var(--eco-green);
+  color: var(--green-600);
   font-size: 10px;
   font-weight: 800;
 }
@@ -1325,9 +1685,13 @@ main {
   padding: 15px 10px;
   border: 1px solid var(--line);
   border-radius: 16px;
-  background: var(--page);
+  background: var(--cream);
   text-align: center;
 }
+
+.impact-stats div:nth-child(1) { background: var(--light-green); }
+.impact-stats div:nth-child(2) { background: var(--soft-yellow); }
+.impact-stats div:nth-child(3) { background: var(--cream); }
 
 .impact-stat-icon {
   display: grid;
@@ -1336,20 +1700,20 @@ main {
   margin: 0 auto 9px;
   place-items: center;
   border-radius: 12px;
-  background: var(--light-blue);
+  background: var(--light-green);
   font-size: 18px;
 }
 
 .point-stat-icon {
   border-radius: 50%;
-  background: var(--reward-yellow);
+  background: var(--point-yellow);
   color: #805000 !important;
   font-size: 13px !important;
   font-weight: 900;
 }
 
 .impact-stats strong {
-  color: var(--deep-blue);
+  color: var(--green-600);
   font-size: 18px;
 }
 
@@ -1413,8 +1777,9 @@ main {
 .mission-detail-card {
   padding: 22px;
   border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  background: white;
+  border-color: #c9e7ce;
+  border-radius: 28px;
+  background: var(--cream);
   box-shadow: var(--shadow-sm);
 }
 
@@ -1472,17 +1837,17 @@ main {
   margin-top: 20px;
   padding: 13px 15px;
   border-radius: 13px;
-  background: linear-gradient(135deg, var(--green-100), #f4fffa);
+  background: linear-gradient(135deg, var(--soft-yellow), #fff9df);
 }
 
 .mission-reward-line span {
-  color: var(--green-600);
+  color: #7a5c00;
   font-size: 10px;
   font-weight: 700;
 }
 
 .mission-reward-line strong {
-  color: var(--green-600);
+  color: #7a5c00;
   font-size: 11px;
 }
 
@@ -1522,7 +1887,7 @@ main {
   display: block;
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(90deg, var(--primary-blue), var(--eco-green));
+  background: linear-gradient(90deg, var(--primary-green), var(--point-yellow));
   transition: width 320ms ease;
 }
 
@@ -1536,7 +1901,7 @@ main {
   margin-top: 22px;
   padding: 16px;
   border-radius: 16px;
-  background: #f8fbff;
+  background: #f4faef;
 }
 
 .condition-heading span {
@@ -1648,8 +2013,24 @@ main {
 }
 
 .mission-result {
+  position: relative;
+  overflow: hidden;
   background: var(--green-100);
   color: var(--green-600);
+}
+
+.mission-result:not([hidden])::after {
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  content: "✨ 🍃 🪙";
+  font-size: 14px;
+  animation: success-sparkle 1.8s ease-in-out infinite;
+}
+
+@keyframes success-sparkle {
+  0%, 100% { opacity: 0.58; transform: translateY(3px) rotate(-2deg); }
+  50% { opacity: 1; transform: translateY(-3px) rotate(2deg); }
 }
 
 .mission-result.is-danger {
@@ -1723,11 +2104,11 @@ main {
   position: relative;
   padding: 24px;
   overflow: hidden;
-  border: 1px solid #dceeff;
+  border: 1px solid #c9e7ce;
   border-radius: 24px;
   background:
     radial-gradient(circle at 95% 4%, rgba(255, 255, 255, 0.72), transparent 130px),
-    linear-gradient(140deg, #ffffff, var(--light-blue));
+    linear-gradient(140deg, var(--cream), var(--light-green));
   color: var(--ink-900);
   box-shadow: var(--shadow-sm);
 }
@@ -1785,7 +2166,7 @@ main {
 }
 
 .wallet-balance strong {
-  color: var(--deep-blue);
+  color: var(--green-600);
   font-size: clamp(36px, 11vw, 54px);
   line-height: 1;
   letter-spacing: -0.06em;
@@ -2000,7 +2381,7 @@ main {
   height: 54px;
   flex: 0 0 auto;
   place-items: center;
-  border: 1px solid #ffe6a0;
+  border: 1px solid var(--pastel-yellow);
   border-radius: 18px;
   background: var(--reward-yellow-soft);
   font-size: 25px;
@@ -2036,8 +2417,8 @@ main {
   padding: 25px;
   overflow: hidden;
   border-radius: var(--radius-lg);
-  border: 1px solid #dceeff;
-  background: linear-gradient(135deg, #ffffff, var(--light-blue));
+  border: 1px solid #c9e7ce;
+  background: linear-gradient(135deg, var(--cream), var(--light-green) 64%, var(--soft-yellow));
   color: var(--ink-900);
   box-shadow: var(--shadow-sm);
 }
@@ -2133,7 +2514,7 @@ main {
   min-width: 0;
   flex-direction: column;
   padding: 10px;
-  border: 1px solid var(--line);
+  border: 1px solid #d3ead6;
   border-radius: 22px;
   background: var(--surface);
   box-shadow: var(--shadow-sm);
@@ -2157,7 +2538,7 @@ main {
 }
 
 .reward-category {
-  color: var(--primary-blue);
+  color: var(--green-600);
   font-size: 8px;
   font-weight: 800;
   letter-spacing: 0.07em;
@@ -2452,7 +2833,7 @@ main {
 .profile-card,
 .level-card,
 .report-card {
-  border: 1px solid var(--line);
+  border: 1px solid #d3ead6;
   border-radius: var(--radius-lg);
   background: var(--surface);
   box-shadow: var(--shadow-sm);
@@ -2520,7 +2901,7 @@ main {
   margin: 24px 0 18px;
   padding: 4px;
   border-radius: 13px;
-  background: var(--light-blue);
+  background: var(--light-green);
 }
 
 .auth-tabs button {
@@ -2735,7 +3116,7 @@ main {
   display: block;
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(90deg, var(--primary-blue), var(--eco-green));
+  background: linear-gradient(90deg, var(--primary-green), var(--point-yellow));
   transition: width 320ms ease;
 }
 
@@ -2812,7 +3193,7 @@ main {
   place-items: center;
   border: 1px solid var(--blue-100);
   border-radius: 30px;
-  background: linear-gradient(145deg, var(--light-blue), white);
+  background: linear-gradient(145deg, var(--light-green), white);
   font-size: 38px;
   box-shadow: var(--shadow-sm);
 }
@@ -2830,7 +3211,7 @@ main {
   padding: 0 20px;
   border: 1px solid #b8ddff;
   background: var(--surface);
-  color: var(--deep-blue);
+  color: var(--green-600);
 }
 
 .bottom-nav {
@@ -2883,7 +3264,7 @@ main {
 }
 
 .nav-item--active {
-  background: var(--light-blue);
+  background: var(--light-green);
   color: var(--blue-700);
 }
 
@@ -2893,7 +3274,7 @@ main {
   width: 28px;
   height: 3px;
   border-radius: 0 0 4px 4px;
-  background: var(--primary-blue);
+  background: var(--primary-green);
   content: "";
 }
 
@@ -3090,6 +3471,60 @@ main {
     overflow: visible;
   }
 
+  .eco-remote-layout {
+    grid-template-columns: 190px 400px minmax(0, 1fr);
+    align-items: start;
+    gap: 22px;
+  }
+
+  .remote-partner {
+    position: sticky;
+    top: 104px;
+    flex-direction: column;
+    padding: 18px 14px;
+  }
+
+  .remote-partner-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 38px;
+  }
+
+  .remote-partner-picture img {
+    width: 142px;
+    height: 142px;
+  }
+
+  .remote-speech {
+    width: 100%;
+    text-align: center;
+  }
+
+  .remote-speech::before {
+    top: -7px;
+    left: calc(50% - 7px);
+  }
+
+  .eco-remote {
+    margin: 0;
+  }
+
+  .remote-diagnostics {
+    padding-top: 2px;
+  }
+
+  .remote-diagnostics .device-status-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .remote-diagnostics .scenario-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .remote-diagnostics .scenario-buttons {
+    min-width: 0;
+  }
+
   .reward-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 16px;
@@ -3136,6 +3571,38 @@ main {
   .hero-card {
     padding-right: 18px;
     padding-left: 18px;
+  }
+
+  .aircon-simulator {
+    padding: 18px 14px;
+  }
+
+  .eco-remote {
+    padding: 16px;
+  }
+
+  .remote-partner {
+    padding: 10px;
+  }
+
+  .remote-partner-picture {
+    width: 72px;
+    height: 72px;
+  }
+
+  .remote-partner-picture img {
+    width: 68px;
+    height: 68px;
+  }
+
+  .remote-temperature-controls {
+    grid-template-columns: 54px 1fr auto 1fr 54px;
+    gap: 5px;
+  }
+
+  .remote-temperature-controls button {
+    width: 54px;
+    height: 54px;
   }
 
   .mission-body {

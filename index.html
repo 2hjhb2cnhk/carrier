@@ -15,6 +15,7 @@
     <script src="./supabase-service.js" defer></script>
     <script src="./weather-service.js" defer></script>
     <script src="./app.js" defer></script>
+    <script src="./remote-ui.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">본문 바로가기</a>
@@ -73,16 +74,16 @@
 
           <section class="hero-card" aria-label="Carrier GreenON 친환경 미션 안내">
             <div class="hero-copy">
-              <span class="hero-kicker">⚡ 지구를 지키는 오늘의 도전</span>
-              <h2>전기를 아끼고<br />지구를 지켜요 <span aria-hidden="true">🌍</span></h2>
-              <p>매일 작은 절약 미션을 완료하고<br />리워드 포인트를 받아보세요.</p>
+              <span class="hero-kicker">🌼 북극곰과 함께하는 절전 게임</span>
+              <h2>오늘도 지구를 위해<br />전기를 아껴볼까요? <span aria-hidden="true">🌱</span></h2>
+              <p>작은 절약 미션을 완료하고<br />지구도 지키고 포인트도 모아보세요!</p>
             </div>
             <div class="hero-mascot" aria-hidden="true">
               <span class="mascot-glow"></span>
               <img src="./carrier-polar-bear.png" alt="" />
             </div>
             <div class="hero-actions">
-              <button class="primary-button hero-cta" type="button" data-go-page="mission">오늘의 미션 시작하기</button>
+              <button class="primary-button hero-cta" type="button" data-go-page="mission">오늘의 미션 시작하기 ⚡</button>
               <span class="hero-reward-note">
                 <span class="point-coin point-coin--small" aria-hidden="true">P</span>
                 <span>오늘 받을 수 있는 포인트 <strong>+150P</strong></span>
@@ -147,96 +148,111 @@
           <section class="aircon-simulator" id="aircon-simulator" aria-labelledby="aircon-simulator-title">
             <div class="simulator-heading">
               <div>
-                <p class="eyebrow">VIRTUAL CARRIER IoT</p>
-                <h2 id="aircon-simulator-title">가상 에어컨 상태</h2>
-              </div>
-              <button class="power-button" id="power-button" type="button" aria-pressed="true">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v10M6.3 5.6a9 9 0 1 0 11.4 0" /></svg>
-                <span>POWER ON</span>
-              </button>
-            </div>
-
-            <div class="device-alert" id="device-alert" role="status" aria-live="polite">
-              <span class="device-alert__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-3-6.2" /><path d="m8.5 12 2.3 2.3L20 5" /></svg>
-              </span>
-              <div>
-                <strong id="device-alert-title">모든 상태가 정상이에요</strong>
-                <p id="device-alert-message">Carrier GreenON이 쾌적한 냉방 상태를 확인했어요.</p>
+                <p class="eyebrow">GREEN MISSION CONTROLLER</p>
+                <h2 id="aircon-simulator-title">나의 ECO AIR 리모컨</h2>
+                <p class="simulator-subtitle">실제 기기 API가 아닌 친환경 미션용 가상 리모컨이에요.</p>
               </div>
             </div>
 
-            <div class="device-status-grid" aria-label="에어컨 상세 상태">
-              <div class="device-status-item">
-                <span>POWER</span>
-                <strong id="detail-power">ON</strong>
-              </div>
-              <div class="device-status-item">
-                <span>MODE</span>
-                <strong id="detail-mode">냉방</strong>
-              </div>
-              <div class="device-status-item">
-                <span>설정온도</span>
-                <strong id="detail-temperature">26℃</strong>
-              </div>
-              <div class="device-status-item">
-                <span>FAN</span>
-                <strong id="detail-fan">자동풍</strong>
-              </div>
-              <div class="device-status-item">
-                <span>사용시간</span>
-                <strong id="detail-runtime">0분</strong>
-              </div>
-              <div class="device-status-item" id="filter-status-item">
-                <span>필터 수명</span>
-                <strong id="detail-filter">72%</strong>
-              </div>
-            </div>
+            <div class="eco-remote-layout">
+              <aside class="remote-partner" aria-label="북극곰 절전 파트너 안내">
+                <div class="remote-partner-picture" aria-hidden="true">
+                  <img src="./carrier-polar-bear.png" alt="" />
+                </div>
+                <div class="remote-speech" id="remote-speech" role="status" aria-live="polite">
+                  <strong>완벽해요! 🌱</strong>
+                  <span>지구가 좋아하고 있어요!</span>
+                </div>
+              </aside>
 
-            <div class="simulation-controls">
-              <div class="control-row">
-                <label for="mode-select">운전 모드</label>
-                <select id="mode-select">
-                  <option value="cool">냉방</option>
-                  <option value="dry">제습</option>
-                  <option value="fan">송풍</option>
-                </select>
-              </div>
+              <div class="eco-remote" id="eco-remote">
+                <div class="remote-header">
+                  <div>
+                    <span class="remote-brand"><span aria-hidden="true">🌿</span> ECO AIR</span>
+                    <small id="remote-operation-label">절전 운전 중</small>
+                  </div>
+                  <button class="power-button" id="power-button" type="button" aria-pressed="true">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v10M6.3 5.6a9 9 0 1 0 11.4 0" /></svg>
+                    <span>POWER ON</span>
+                  </button>
+                </div>
 
-              <div class="control-row">
-                <span class="control-label">설정온도</span>
-                <div class="stepper" aria-label="설정온도 조절">
-                  <button type="button" id="temperature-down" aria-label="설정온도 1도 낮추기">−</button>
+                <div class="remote-display" id="remote-display">
+                  <span class="remote-display-kicker">CURRENT TEMPERATURE</span>
                   <output id="temperature-output" aria-live="polite">26℃</output>
+                  <strong id="remote-mode-label">냉방 · ECO</strong>
+                  <div class="remote-eco-message" id="remote-eco-message">
+                    <span aria-hidden="true">🌱</span>
+                    <span><strong>절전 온도 달성!</strong><small>지구가 좋아하는 온도예요</small></span>
+                  </div>
+                </div>
+
+                <div class="remote-temperature-controls" aria-label="설정온도 조절">
+                  <button type="button" id="temperature-down" aria-label="설정온도 1도 낮추기">−</button>
+                  <span>18℃</span>
+                  <strong>온도 조절</strong>
+                  <span>30℃</span>
                   <button type="button" id="temperature-up" aria-label="설정온도 1도 높이기">＋</button>
                 </div>
-              </div>
 
-              <fieldset class="fan-control">
-                <legend>FAN 풍량</legend>
-                <div class="segmented-control" id="fan-control">
-                  <button class="segment--active" type="button" data-fan="auto">자동</button>
-                  <button type="button" data-fan="low">약풍</button>
-                  <button type="button" data-fan="medium">중풍</button>
-                  <button type="button" data-fan="high">강풍</button>
+                <div class="remote-functions">
+                  <div class="control-row remote-mode-control">
+                    <label for="mode-select">운전 모드</label>
+                    <select id="mode-select">
+                      <option value="cool">❄️ 냉방 · ECO</option>
+                      <option value="dry">💧 제습</option>
+                      <option value="fan">🍃 송풍</option>
+                    </select>
+                  </div>
+
+                  <fieldset class="fan-control remote-fan-control">
+                    <legend>바람 세기</legend>
+                    <div class="segmented-control" id="fan-control">
+                      <button class="segment--active" type="button" data-fan="auto">ECO</button>
+                      <button type="button" data-fan="low">1 약풍</button>
+                      <button type="button" data-fan="medium">2 중풍</button>
+                      <button type="button" data-fan="high">3 강풍</button>
+                    </div>
+                  </fieldset>
+
+                  <button class="time-button" id="add-runtime-button" type="button">
+                    <span aria-hidden="true">⏱</span>
+                    미션 시간 +30분
+                  </button>
                 </div>
-              </fieldset>
-
-              <button class="time-button" id="add-runtime-button" type="button">
-                <span aria-hidden="true">⏱</span>
-                사용시간 +30분
-              </button>
-            </div>
-
-            <div class="scenario-panel">
-              <div>
-                <strong>상태 시뮬레이션</strong>
-                <p>실제 기기 API 없이 다양한 IoT 상태를 시험해요.</p>
               </div>
-              <div class="scenario-buttons">
-                <button class="scenario-button scenario-button--active" type="button" data-scenario="normal">정상</button>
-                <button class="scenario-button" type="button" data-scenario="filter">필터 점검</button>
-                <button class="scenario-button" type="button" data-scenario="sensor">센서 오류</button>
+
+              <div class="remote-diagnostics">
+                <div class="device-alert" id="device-alert" role="status" aria-live="polite">
+                  <span class="device-alert__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-3-6.2" /><path d="m8.5 12 2.3 2.3L20 5" /></svg>
+                  </span>
+                  <div>
+                    <strong id="device-alert-title">모든 상태가 정상이에요</strong>
+                    <p id="device-alert-message">Carrier GreenON이 쾌적한 냉방 상태를 확인했어요.</p>
+                  </div>
+                </div>
+
+                <div class="device-status-grid" aria-label="에어컨 상세 상태">
+                  <div class="device-status-item"><span>POWER</span><strong id="detail-power">ON</strong></div>
+                  <div class="device-status-item"><span>MODE</span><strong id="detail-mode">냉방</strong></div>
+                  <div class="device-status-item"><span>설정온도</span><strong id="detail-temperature">26℃</strong></div>
+                  <div class="device-status-item"><span>FAN</span><strong id="detail-fan">자동풍</strong></div>
+                  <div class="device-status-item"><span>사용시간</span><strong id="detail-runtime">0분</strong></div>
+                  <div class="device-status-item" id="filter-status-item"><span>필터 수명</span><strong id="detail-filter">72%</strong></div>
+                </div>
+
+                <div class="scenario-panel">
+                  <div>
+                    <strong>상태 시뮬레이션</strong>
+                    <p>실제 기기 API 없이 다양한 IoT 상태를 시험해요.</p>
+                  </div>
+                  <div class="scenario-buttons">
+                    <button class="scenario-button scenario-button--active" type="button" data-scenario="normal">정상</button>
+                    <button class="scenario-button" type="button" data-scenario="filter">필터 점검</button>
+                    <button class="scenario-button" type="button" data-scenario="sensor">센서 오류</button>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
@@ -245,24 +261,25 @@
             <div class="mission-topline">
               <div>
                 <p class="eyebrow">TODAY'S MISSION</p>
-                <h2 id="mission-preview-title">오늘의 절전 미션 <span aria-hidden="true">⚡</span></h2>
+                <h2 id="mission-preview-title">🌱 오늘의 절전 미션</h2>
               </div>
               <span class="point-chip"><span class="point-coin point-coin--small" aria-hidden="true">P</span><strong>+150 P</strong></span>
             </div>
             <div class="mission-body">
               <div class="mission-symbol" aria-hidden="true">🌡️</div>
               <div class="mission-copy">
-                <strong>에어컨 온도 26℃ 유지하기</strong>
-                <p>에어컨 적정온도를 유지하고 전력 사용량을 줄여보세요.</p>
+                <span class="mission-goal-label">오늘의 목표</span>
+                <strong>에어컨 26℃ 맞추기</strong>
+                <p>에어컨을 26℃로 설정하고 시원하게 전기를 절약해보세요!</p>
                 <div class="mission-tags" aria-label="미션 조건">
-                  <span>쉬움</span>
+                  <span>⭐ 쉬움</span>
                   <span>⏱ 약 60분</span>
                   <span>❄ 냉방 모드</span>
                 </div>
               </div>
             </div>
             <button class="primary-button" type="button" data-go-page="mission">
-              미션 도전하기
+              미션 시작하기
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
             </button>
             <p class="preview-note">로그인 후 미션 화면에서 바로 참여할 수 있어요.</p>

@@ -40,6 +40,7 @@ const publicFiles = [
   "styles.css",
   "carrier-polar-bear.png",
   "app.js",
+  "remote-ui.js",
   "supabase-service.js",
   "weather-service.js",
 ];
