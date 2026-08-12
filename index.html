@@ -4,11 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#0b0a10" />
-    <meta
-      name="description"
-      content="한 명의 라이어를 찾아내는 오프라인 파티 게임"
-    />
-    <title>라이어 게임</title>
+    <meta name="description" content="친구들과 각자의 휴대폰으로 즐기는 실시간 온라인 라이어 게임" />
+    <title>라이어 게임 온라인</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -17,73 +14,110 @@
 
     <main class="game-shell">
       <header class="topbar">
-        <a class="brand" href="#" id="home-link" aria-label="처음 화면으로">
+        <button id="home-btn" class="brand" type="button" aria-label="처음 화면으로">
           <span class="brand-mark">L</span>
           <span>LIAR GAME</span>
-        </a>
-        <span id="step-label" class="step-label">게임 설정</span>
+        </button>
+        <div id="connection-pill" class="connection-pill hidden">
+          <span class="connection-dot"></span>
+          <span id="connection-text">연결 중</span>
+        </div>
       </header>
 
-      <section id="setup-screen" class="screen active" aria-labelledby="setup-title">
+      <section id="home-screen" class="screen active" aria-labelledby="home-title">
         <div class="hero-copy">
-          <p class="eyebrow">FIND THE LIAR</p>
-          <h1 id="setup-title">누가 거짓말을<br /><em>하고 있을까?</em></h1>
+          <p class="eyebrow">ONLINE PARTY GAME</p>
+          <h1 id="home-title">각자의 폰으로<br /><em>라이어를 찾아라.</em></h1>
           <p class="description">
-            모두 같은 단어를 알고 있지만, 단 한 명은 모릅니다.<br />
-            티 나지 않게 설명하고 숨어 있는 라이어를 찾아보세요.
+            방을 만들고 초대 코드를 공유하세요.<br />
+            역할부터 투표까지 모든 화면이 실시간으로 연결됩니다.
           </p>
         </div>
 
-        <div class="setup-panel">
-          <div class="section-heading">
-            <div>
-              <span class="section-number">01</span>
-              <h2>플레이어</h2>
-            </div>
-            <span id="player-count" class="count-badge">3 / 8</span>
-          </div>
-
-          <div id="player-inputs" class="player-inputs"></div>
-
-          <button id="add-player-btn" class="btn btn-ghost" type="button">
-            <span aria-hidden="true">＋</span> 플레이어 추가
-          </button>
-
-          <div class="setting-row">
-            <div>
-              <label for="timer-select">토론 시간</label>
-              <p>역할 공개 후 사용할 타이머예요.</p>
-            </div>
-            <select id="timer-select" aria-label="토론 시간">
+        <div class="mode-grid">
+          <article class="action-card featured">
+            <span class="card-number">01</span>
+            <div class="action-icon" aria-hidden="true">＋</div>
+            <h2>새 방 만들기</h2>
+            <p>내가 방장이 되어 친구들을 초대해요.</p>
+            <label class="field-label" for="host-name">내 이름</label>
+            <input id="host-name" class="text-input" maxlength="12" autocomplete="nickname" placeholder="이름 입력" />
+            <label class="field-label" for="timer-select">토론 시간</label>
+            <select id="timer-select" class="select-input">
               <option value="60">1분</option>
               <option value="120">2분</option>
               <option value="180" selected>3분</option>
               <option value="300">5분</option>
             </select>
-          </div>
+            <button id="create-room-btn" class="btn btn-primary" type="button">
+              방 만들기 <span aria-hidden="true">→</span>
+            </button>
+          </article>
 
-          <p id="setup-error" class="inline-error" role="alert" aria-live="polite"></p>
-          <button id="start-btn" class="btn btn-primary" type="button">
-            게임 시작 <span aria-hidden="true">→</span>
-          </button>
+          <article class="action-card">
+            <span class="card-number">02</span>
+            <div class="action-icon secondary" aria-hidden="true">↗</div>
+            <h2>방에 참가하기</h2>
+            <p>받은 코드와 이름을 입력해 입장해요.</p>
+            <label class="field-label" for="room-code-input">초대 코드</label>
+            <input
+              id="room-code-input"
+              class="text-input code-input"
+              maxlength="5"
+              autocomplete="off"
+              autocapitalize="characters"
+              placeholder="ABCDE"
+            />
+            <label class="field-label" for="join-name">내 이름</label>
+            <input id="join-name" class="text-input" maxlength="12" autocomplete="nickname" placeholder="이름 입력" />
+            <button id="join-room-btn" class="btn btn-ghost" type="button">
+              참가하기 <span aria-hidden="true">→</span>
+            </button>
+          </article>
+        </div>
+        <p id="home-error" class="inline-error" role="alert" aria-live="polite"></p>
+      </section>
+
+      <section id="lobby-screen" class="screen" aria-labelledby="lobby-title">
+        <p class="eyebrow">WAITING ROOM</p>
+        <h1 id="lobby-title">친구들을<br /><em>초대하세요.</em></h1>
+
+        <div class="room-code-card">
+          <span>초대 코드</span>
+          <strong id="room-code">-----</strong>
+          <button id="copy-link-btn" class="copy-button" type="button">초대 링크 복사</button>
+        </div>
+
+        <div class="panel">
+          <div class="section-heading">
+            <div>
+              <span class="section-number">PLAYERS</span>
+              <h2>참가자</h2>
+            </div>
+            <span id="lobby-count" class="count-badge">1 / 8</span>
+          </div>
+          <div id="lobby-player-list" class="player-list"></div>
+        </div>
+
+        <div id="host-lobby-actions">
+          <button id="start-game-btn" class="btn btn-primary" type="button">게임 시작</button>
+          <p id="start-hint" class="button-hint">최소 3명이 모이면 시작할 수 있어요.</p>
+        </div>
+        <div id="guest-lobby-wait" class="waiting-card hidden">
+          <span class="pulse-dot"></span>
+          방장이 게임을 시작하기를 기다리고 있어요.
         </div>
       </section>
 
-      <section id="role-screen" class="screen role-screen" aria-labelledby="player-turn">
-        <div class="progress-wrap" aria-hidden="true">
-          <div id="role-progress" class="progress-bar"></div>
-        </div>
-        <p id="role-order" class="eyebrow"></p>
-        <h1 id="player-turn"></h1>
-        <p id="handoff-copy" class="description">
-          휴대폰을 넘겨받았다면 아래 버튼을 눌러주세요.<br />
-          다른 사람이 화면을 보지 않도록 조심하세요.
-        </p>
+      <section id="role-screen" class="screen role-screen" aria-labelledby="role-heading">
+        <p id="round-label" class="eyebrow">ROUND 01 · SECRET ROLE</p>
+        <h1 id="role-heading">나의 역할을<br /><em>확인하세요.</em></h1>
+        <p class="description">이 화면은 다른 사람에게 보여주지 마세요.</p>
 
-        <button id="show-role-btn" class="reveal-button" type="button">
+        <button id="reveal-role-btn" class="reveal-button" type="button">
           <span class="eye-icon" aria-hidden="true">◉</span>
-          <span>내 역할 확인하기</span>
-          <small>나만 볼 수 있게 열어보세요</small>
+          <span>역할 카드 열기</span>
+          <small>터치하면 역할과 제시어가 보여요</small>
         </button>
 
         <div id="role-card" class="role-card hidden" aria-live="polite">
@@ -94,18 +128,24 @@
             <strong id="role-word"></strong>
           </div>
           <p id="role-hint" class="role-hint"></p>
-          <button id="next-player-btn" class="btn btn-primary" type="button">
-            확인 완료 <span aria-hidden="true">→</span>
-          </button>
+          <button id="ready-btn" class="btn btn-primary" type="button">확인 완료</button>
+        </div>
+
+        <div class="ready-progress">
+          <div class="ready-copy">
+            <span>역할 확인 현황</span>
+            <strong id="ready-count">0 / 0</strong>
+          </div>
+          <div class="progress-track"><div id="ready-bar" class="progress-bar"></div></div>
         </div>
       </section>
 
       <section id="discussion-screen" class="screen discussion-screen" aria-labelledby="discussion-title">
-        <p class="eyebrow">DISCUSSION</p>
+        <p class="eyebrow">LIVE DISCUSSION</p>
         <h1 id="discussion-title">서로를 의심할<br /><em>시간입니다.</em></h1>
         <p class="description">
           제시어를 직접 말하지 말고 한 사람씩 설명하세요.<br />
-          너무 정확해도, 너무 모호해도 의심받을 수 있어요.
+          시간이 끝나면 모든 기기에서 투표가 열립니다.
         </p>
 
         <div id="timer-ring" class="timer-ring">
@@ -115,15 +155,20 @@
           </div>
         </div>
 
-        <button id="timer-btn" class="btn btn-primary" type="button">타이머 시작</button>
-        <button id="vote-btn" class="btn btn-ghost" type="button">바로 지목하기</button>
+        <div id="discussion-player-list" class="mini-player-list"></div>
+        <button id="open-vote-btn" class="btn btn-primary hidden" type="button">지금 투표 시작</button>
+        <p id="discussion-wait" class="button-hint">방장이 토론을 마치면 투표가 시작됩니다.</p>
       </section>
 
       <section id="vote-screen" class="screen vote-screen" aria-labelledby="vote-title">
         <p class="eyebrow">FINAL VOTE</p>
         <h1 id="vote-title">라이어는<br /><em>누구인가요?</em></h1>
-        <p class="description">모두 상의한 뒤 가장 의심스러운 한 명을 선택하세요.</p>
+        <p class="description">가장 의심스러운 한 명을 선택하세요. 모든 투표가 모이면 결과가 공개됩니다.</p>
         <div id="vote-list" class="vote-list"></div>
+        <div id="vote-wait" class="waiting-card hidden">
+          <span class="pulse-dot"></span>
+          <span id="vote-wait-text">다른 플레이어의 투표를 기다리고 있어요.</span>
+        </div>
       </section>
 
       <section id="result-screen" class="screen result-screen" aria-labelledby="result-title">
@@ -131,8 +176,22 @@
         <p id="result-kicker" class="eyebrow"></p>
         <h1 id="result-title"></h1>
         <div id="result-content" class="result-content"></div>
-        <button id="restart-btn" class="btn btn-primary" type="button">같은 멤버로 다시 하기</button>
-        <button id="reset-btn" class="btn btn-ghost" type="button">플레이어 다시 설정</button>
+
+        <div class="panel vote-summary-panel">
+          <div class="section-heading">
+            <div>
+              <span class="section-number">VOTES</span>
+              <h2>투표 결과</h2>
+            </div>
+          </div>
+          <div id="vote-summary" class="vote-summary"></div>
+        </div>
+
+        <button id="restart-btn" class="btn btn-primary hidden" type="button">같은 멤버로 다시 하기</button>
+        <div id="restart-wait" class="waiting-card hidden">
+          <span class="pulse-dot"></span>
+          방장이 다음 게임을 준비하고 있어요.
+        </div>
       </section>
     </main>
 
